@@ -888,164 +888,6 @@ tbody td { padding:9px 13px; max-width:200px; overflow:hidden; text-overflow:ell
 .pp-po-table td{padding:7px 10px;border-bottom:1px solid var(--surface)}
 .pp-po-table tr:hover td{background:var(--surface)}
 .pp-po-table .r{text-align:right}
-
-/* ── Year Charts ── */
-.charts-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-.chart-card {
-  background: var(--card);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-  padding: 20px;
-  cursor: pointer;
-  transition: all .2s ease;
-  position: relative;
-  overflow: hidden;
-}
-.chart-card::before {
-  content:'';
-  position:absolute;
-  top:0;left:0;right:0;
-  height:3px;
-  background: linear-gradient(90deg, var(--brand), var(--blue));
-}
-.chart-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(0,0,0,.1);
-}
-.chart-card-title {
-  font-size: .82rem;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.chart-wrap {
-  position: relative;
-  width: 180px;
-  height: 180px;
-  margin: 0 auto 16px;
-}
-.chart-wrap canvas {
-  width: 180px !important;
-  height: 180px !important;
-}
-.chart-center {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  pointer-events: none;
-}
-.chart-center-val {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--ink);
-  line-height: 1;
-}
-.chart-center-lbl {
-  font-size: .68rem;
-  color: var(--muted);
-  margin-top: 3px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .4px;
-}
-.chart-legend {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: .8rem;
-}
-.legend-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.legend-name { color: var(--muted); flex: 1; }
-.legend-val  { font-weight: 700; color: var(--ink); }
-.legend-pct  { font-size: .73rem; color: var(--muted-light); min-width: 40px; text-align: right; }
-.chart-hint {
-  position: absolute;
-  bottom: 10px; right: 12px;
-  font-size: .7rem;
-  color: var(--muted-light);
-  opacity: 0;
-  transition: opacity .2s;
-}
-.chart-card:hover .chart-hint { opacity: 1; }
-
-/* Year Chart Popup */
-.ychart-overlay {
-  display:none;position:fixed;inset:0;
-  background:rgba(13,13,13,.65);z-index:1002;
-  align-items:center;justify-content:center;
-  backdrop-filter:blur(5px);
-}
-.ychart-overlay.open { display:flex; }
-.ychart-popup {
-  background:var(--card);border-radius:20px;
-  width:640px;max-width:94vw;max-height:90vh;
-  overflow:hidden;display:flex;flex-direction:column;
-  box-shadow:0 30px 80px rgba(0,0,0,.3);
-  animation:fadeUp .2s ease;
-}
-.ycp-header {
-  padding:20px 24px 16px;
-  background:var(--ink-2);
-  color:white;
-  display:flex;justify-content:space-between;align-items:flex-start;
-  border-bottom:2px solid var(--brand);
-}
-.ycp-title { font-size:1rem;font-weight:800; }
-.ycp-sub { font-size:.76rem;opacity:.5;margin-top:3px; }
-.ycp-close {
-  background:rgba(255,255,255,.15);border:none;border-radius:7px;
-  width:28px;height:28px;cursor:pointer;display:flex;
-  align-items:center;justify-content:center;
-  font-size:.85rem;color:white;transition:background .15s;flex-shrink:0;
-}
-.ycp-close:hover { background:rgba(194,0,25,.5); }
-.ycp-body { padding:20px 24px 24px;overflow-y:auto;flex:1; }
-.ycp-charts-row {
-  display:grid;grid-template-columns:200px 1fr;
-  gap:20px;align-items:center;margin-bottom:20px;
-}
-.ycp-canvas-wrap {
-  position:relative;width:180px;height:180px;
-}
-.ycp-canvas-wrap canvas { width:180px!important;height:180px!important; }
-.ycp-center {
-  position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);text-align:center;
-}
-.ycp-year-table { width:100%;border-collapse:collapse;font-size:.8rem;margin-top:14px; }
-.ycp-year-table th {
-  background:var(--ink-3);color:white;padding:8px 10px;
-  text-align:center;font-size:.71rem;text-transform:uppercase;
-  letter-spacing:.3px;font-weight:600;
-}
-.ycp-year-table th:first-child { text-align:left; }
-.ycp-year-table td { padding:8px 10px;border-bottom:1px solid var(--surface);text-align:center;white-space:nowrap; }
-.ycp-year-table td:first-child { text-align:left;font-weight:700; }
-.ycp-year-table tr:last-child td { background:var(--surface);font-weight:800;border-bottom:none; }
-.ycp-year-table tr:hover:not(:last-child) td { background:#fafafa;cursor:pointer; }
-.yg2 { color:var(--green);font-weight:700; }
-.ya2 { color:var(--amber);font-weight:700; }
 </style>
 </head>
 <body>
@@ -1218,42 +1060,7 @@ tbody td { padding:9px 13px; max-width:200px; overflow:hidden; text-overflow:ell
       </div>
 
       <div class="section-header">
-        <span class="section-title">📅 แบ่งตามปี — สัดส่วนสถานะ PO</span>
-        <div class="section-line"></div>
-      </div>
-
-      <!-- Donut Charts row -->
-      <div class="charts-row">
-        <div class="chart-card" onclick="showYearChartPopup('media')">
-          <div class="chart-card-title">📋 Media — สัดส่วนสถานะ PO</div>
-          <div class="chart-wrap">
-            <canvas id="chart-media" width="220" height="220"></canvas>
-            <div class="chart-center" id="chart-media-center">
-              <div class="chart-center-val" id="chart-media-total">—</div>
-              <div class="chart-center-lbl">PO ทั้งหมด</div>
-            </div>
-          </div>
-          <div class="chart-legend" id="chart-media-legend"></div>
-          <div class="chart-hint">คลิกเพื่อดูรายละเอียด ⤢</div>
-        </div>
-
-        <div class="chart-card" onclick="showYearChartPopup('prod')">
-          <div class="chart-card-title">🎬 Production — สัดส่วนสถานะ PO</div>
-          <div class="chart-wrap">
-            <canvas id="chart-prod" width="220" height="220"></canvas>
-            <div class="chart-center" id="chart-prod-center">
-              <div class="chart-center-val" id="chart-prod-total">—</div>
-              <div class="chart-center-lbl">PO ทั้งหมด</div>
-            </div>
-          </div>
-          <div class="chart-legend" id="chart-prod-legend"></div>
-          <div class="chart-hint">คลิกเพื่อดูรายละเอียด ⤢</div>
-        </div>
-      </div>
-
-      <!-- Year Table -->
-      <div class="section-header" style="margin-top:8px">
-        <span class="section-title">📊 ตารางแบ่งตามปี</span>
+        <span class="section-title">📅 แบ่งตามปี — วางบิลแล้ว และ ยังไม่วางบิล</span>
         <div class="section-line"></div>
       </div>
       <div class="year-panel">
@@ -1431,20 +1238,6 @@ tbody td { padding:9px 13px; max-width:200px; overflow:hidden; text-overflow:ell
   </footer>
 </div>
 
-<!-- YEAR CHART POPUP -->
-<div class="ychart-overlay" id="ychart-ov" onclick="closeYChartPopup(event)">
-  <div class="ychart-popup">
-    <div class="ycp-header">
-      <div>
-        <div class="ycp-title" id="ycp-title">สัดส่วนสถานะ PO</div>
-        <div class="ycp-sub" id="ycp-sub">—</div>
-      </div>
-      <button class="ycp-close" onclick="document.getElementById('ychart-ov').classList.remove('open');document.body.style.overflow=''">✕</button>
-    </div>
-    <div class="ycp-body" id="ycp-body"></div>
-  </div>
-</div>
-
 <!-- PERSON POPUP MODAL -->
 <div class="person-overlay" id="person-ov" onclick="closePersonPopup(event)">
   <div class="person-popup" id="person-popup">
@@ -1492,79 +1285,42 @@ tbody td { padding:9px 13px; max-width:200px; overflow:hidden; text-overflow:ell
 // ============================================================
 const SHEET_ID = '1YhD69ndFVRuDZTlxDkitMPaJEGHBs8R3';
 
-// gid ของแต่ละ sheet (เร็วกว่าใช้ชื่อ)
-const GID = {
-  'Media':         '570373312',
-  'Production':    '53967775',
-  '📊 Dashboard':  '827819259',
-  'Lists':         '',  // ใช้ชื่อแทน
-};
-
-// สร้าง URL หลายแบบ เพื่อ fallback
-function sheetUrls(name) {
-  const gid = GID[name];
-  const base = `https://docs.google.com/spreadsheets/d/${SHEET_ID}`;
-  const urls = [];
-  // URL แบบ gid (เร็วที่สุด)
-  if (gid) {
-    urls.push(`${base}/export?format=csv&gid=${gid}`);
-    urls.push(`${base}/gviz/tq?tqx=out:csv&gid=${gid}`);
-  }
-  // URL แบบชื่อ sheet
-  urls.push(`${base}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(name)}`);
-  return urls;
-}
-
-// Proxy เรียงตามความเร็ว
 const PROXIES = [
   u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
   u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+  u => `https://thingproxy.freeboard.io/fetch/${u}`,
   u => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`,
 ];
 
-// Race: ลอง direct + proxy พร้อมกัน เอาอันที่ตอบก่อน
+function sheetUrl(name) {
+  return `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(name)}`;
+}
+
 async function fetchSheet(name) {
-  const urls = sheetUrls(name);
+  const direct = sheetUrl(name);
+  
+  // ถ้าเปิดจาก file:// ข้าม direct fetch ไปเลย (จะ CORS block แน่นอน)
   const isLocal = location.protocol === 'file:';
-
-  // สร้าง fetch attempts ทุกแบบพร้อมกัน
-  const attempts = [];
-
-  // Direct fetch (เฉพาะ GitHub Pages)
+  
   if (!isLocal) {
-    for (const url of urls.slice(0, 2)) {
-      attempts.push(
-        fetch(url, { mode:'cors', signal: AbortSignal.timeout(8000) })
-          .then(r => r.ok ? r.text() : Promise.reject())
-          .then(t => (t && t.length > 20 && !t.startsWith('<!')) ? t : Promise.reject())
-          .catch(() => null)
-      );
-    }
+    // Try direct (works when served from web server / GitHub Pages)
+    try {
+      const r = await fetch(direct, { mode:'cors', signal: AbortSignal.timeout(5000) });
+      if (r.ok) { const t = await r.text(); if (t && t.length > 20) return t; }
+    } catch(e) {}
   }
-
-  // Proxy attempts (ทำงานได้ทั้ง local และ GitHub Pages)
-  const mainUrl = urls[0];
+  
+  // Try proxies with fallback
   for (const mk of PROXIES) {
-    attempts.push(
-      fetch(mk(mainUrl), { signal: AbortSignal.timeout(12000) })
-        .then(r => r.ok ? r.text() : Promise.reject())
-        .then(t => (t && t.length > 20 && !t.startsWith('<!') && !t.includes('"error"')) ? t : Promise.reject())
-        .catch(() => null)
-    );
+    try {
+      const r = await fetch(mk(direct), { signal: AbortSignal.timeout(10000) });
+      if (r.ok) {
+        const t = await r.text();
+        if (t && t.length > 20 && !t.includes('Error') && !t.includes('<!DOCTYPE')) return t;
+      }
+    } catch(e) { console.warn('Proxy failed:', e.message); }
   }
-
-  // รอทุก attempt แล้วเอาอันแรกที่สำเร็จ
-  const results = await Promise.allSettled(attempts);
-  for (const r of results) {
-    if (r.status === 'fulfilled' && r.value) return r.value;
-  }
-
-  // Race แบบเร็วที่สุด
-  const raceResults = await Promise.all(attempts);
-  const first = raceResults.find(t => t && t.length > 20);
-  if (first) return first;
-
-  throw new Error(`ดึงข้อมูล "${name}" ไม่สำเร็จ — ตรวจสอบ Google Sheets sharing และ internet`);
+  throw new Error(`ดึงข้อมูล "${name}" ไม่สำเร็จ — ตรวจสอบ internet และ Sheets sharing`);
 }
 
 // ============================================================
@@ -1737,42 +1493,23 @@ async function loadData(){
   const btn = document.getElementById('cta-refresh');
   btn.disabled = true;
   setStatus('','กำลังดึงข้อมูล...');
-  document.getElementById('lupd').textContent='กำลังโหลด... (~5-10 วินาที)';
   ['kpi-media','kpi-prod'].forEach(id=>{
-    document.getElementById(id).innerHTML=`<div class="loading-area" style="grid-column:1/-1">
-      <div class="spinner"></div>
-      <span style="font-size:.85rem">กำลังดึงข้อมูลจาก Google Sheets...</span>
-      <span style="font-size:.75rem;color:var(--muted-light);margin-top:4px">ใช้เวลาประมาณ 5-15 วินาทีค่ะ</span>
-    </div>`;
+    document.getElementById(id).innerHTML='<div class="loading-area" style="grid-column:1/-1"><div class="spinner"></div><span>กำลังดึงข้อมูล...</span></div>';
   });
   try {
-    // โหลด Media และ Production ก่อน (สำคัญที่สุด) แล้วค่อย Dashboard/Lists
-    setStatus('','⏳ โหลด Media & Production...');
-    const [mediaT, prodT] = await Promise.all([
+    const [dashT,mediaT,prodT,listT] = await Promise.all([
+      fetchSheet('📊 Dashboard'),
       fetchSheet('Media'),
       fetchSheet('Production'),
-    ]);
-
-    // parse ทันทีเพื่อแสดงผลก่อน
-    S.media.data = parseCSV(mediaT);
-    S.prod.data  = parseCSV(prodT);
-    buildCheckData();
-
-    // แสดง KPI จาก data ที่มีก่อน
-    setStatus('','⏳ คำนวณข้อมูล...');
-    buildDash();
-    buildCharts();
-    ['media','prod','checkmedia','checkpm'].forEach(t=>applyFilters(t));
-
-    // โหลด Lists ที่เหลือ
-    setStatus('','⏳ โหลด Lists...');
-    const [listT] = await Promise.all([
       fetchSheet('Lists'),
     ]);
-    const dashT = null; // ไม่ใช้ Dashboard sheet แล้ว
 
-    S.dash = { media:{total:0,billed:0,pending:0,chqY:0,chqN:0,amt:0}, prod:{total:0,billed:0,pending:0,chqY:0,chqN:0,amt:0}, mediaP:[], prodP:[], yearData:[] };
-    // S.media, S.prod, buildCheckData ทำไปแล้วข้างบน
+    S.dash = parseDashboard(dashT);
+    S.media.data = parseCSV(mediaT);
+    S.prod.data  = parseCSV(prodT);
+    // Check views ดึงจาก Media/Production หลัก ไม่ใช่ Check sheet
+    // (Check sheet ใน Sheets เป็น dynamic filter แสดงแค่คนที่เลือก)
+    buildCheckData();
 
     // ดึงชื่อ unique จาก data จริง ครบถ้วนกว่า Lists sheet
     const mNames = [...new Set(S.media.data.map(r=>r['Media']).filter(v=>v&&v.trim()))].sort();
@@ -1783,7 +1520,13 @@ async function loadData(){
     fillDrop('f-cm-p', mNames);   // Media names จาก Media sheet
     fillDrop('f-cp-p', pNames);   // PM names จาก Production sheet
 
-    // rebuild dropdown หลัง lists โหลดเสร็จ
+    const mt=S.media.data.length, pt=S.prod.data.length;
+    document.getElementById('bdg-media').textContent=mt.toLocaleString();
+    document.getElementById('bdg-prod').textContent=pt.toLocaleString();
+
+    buildDash();
+    ['media','prod','checkmedia','checkpm'].forEach(t=>applyFilters(t));
+
     const now=new Date().toLocaleString('th-TH',{timeZone:'Asia/Bangkok',hour:'2-digit',minute:'2-digit',second:'2-digit'});
     setStatus('ok',`อัปเดต ${now}`);
     document.getElementById('h-upd').textContent=now;
@@ -1951,29 +1694,19 @@ function buildDash(){
   }
 
   document.getElementById('t-year').innerHTML=`
-    <thead>
-      <tr>
-        <th rowspan="2" style="vertical-align:middle">ปี</th>
-        <th colspan="3" style="text-align:center;border-bottom:1px solid rgba(255,255,255,.15)">📋 Media</th>
-        <th colspan="3" style="text-align:center;border-bottom:1px solid rgba(255,255,255,.15);border-left:2px solid rgba(255,255,255,.2)">🎬 Production (PM)</th>
-      </tr>
-      <tr>
-        <th style="text-align:right">วางบิลแล้ว (PO)</th>
-        <th style="text-align:right">ยอด Amount (฿)</th>
-        <th style="text-align:right">ยังไม่วางบิล (PO)</th>
-        <th style="text-align:right;border-left:2px solid rgba(255,255,255,.2)">วางบิลแล้ว (PO)</th>
-        <th style="text-align:right">ยอด Amount (฿)</th>
-        <th style="text-align:right">ยังไม่วางบิล (PO)</th>
-      </tr>
-    </thead>
-    <tbody>${yearData.map(r=>`<tr onclick="showYearRowPopup(${JSON.stringify(r).replace(/'/g,\"\\'\")})" style="cursor:pointer" title="คลิกดูรายละเอียด">
+    <thead><tr>
+      <th>ปี</th>
+      <th>Media วางบิล (PO)</th><th>ยอด Amount</th><th>ยังไม่วางบิล</th>
+      <th class="sep-col">PM วางบิล (PO)</th><th>ยอด Amount</th><th>ยังไม่วางบิล</th>
+    </tr></thead>
+    <tbody>${yearData.map(r=>`<tr>
       <td>${r.yr}</td>
-      <td class="yg" style="text-align:right">${r.mb.toLocaleString()}</td>
-      <td class="yg" style="text-align:right;font-size:.76rem">${fmtK(r.mba)}</td>
-      <td class="ya" style="text-align:right">${r.mp>0?r.mp.toLocaleString():'—'}</td>
-      <td class="yg" style="text-align:right;border-left:2px solid var(--border)">${r.pb.toLocaleString()}</td>
-      <td class="yg" style="text-align:right;font-size:.76rem">${fmtK(r.pba)}</td>
-      <td class="ya" style="text-align:right">${r.pp>0?r.pp.toLocaleString():'—'}</td>
+      <td class="yg">${r.mb.toLocaleString()}</td>
+      <td class="yg">${fmtK(r.mba)}</td>
+      <td class="ya">${r.mp.toLocaleString()}</td>
+      <td class="yg sep-col">${r.pb.toLocaleString()}</td>
+      <td class="yg">${fmtK(r.pba)}</td>
+      <td class="ya">${r.pp.toLocaleString()}</td>
     </tr>`).join('')}</tbody>`;
 }
 
@@ -2357,290 +2090,6 @@ function showPersonPopup(r, type) {
 function closePersonPopup(e) {
   if(e.target.id==='person-ov') {
     document.getElementById('person-ov').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-}
-
-
-// ============================================================
-// DONUT CHARTS
-// ============================================================
-const CHART_COLORS = {
-  billed:   '#16a34a',
-  pending:  '#d97706',
-  chqY:     '#2563eb',
-  chqN:     '#94a3b8',
-};
-
-function drawDonut(canvasId, segments, cx, cy, r, lineWidth) {
-  const canvas = document.getElementById(canvasId);
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const dpr = window.devicePixelRatio || 1;
-  canvas.width  = (cx*2) * dpr;
-  canvas.height = (cy*2) * dpr;
-  canvas.style.width  = (cx*2) + 'px';
-  canvas.style.height = (cy*2) + 'px';
-  ctx.scale(dpr, dpr);
-  ctx.clearRect(0, 0, cx*2, cy*2);
-
-  const total = segments.reduce((s, g) => s + g.val, 0);
-  if (!total) {
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI*2);
-    ctx.strokeStyle = '#e5e7eb';
-    ctx.lineWidth = lineWidth;
-    ctx.stroke();
-    return;
-  }
-
-  let startAngle = -Math.PI / 2;
-  segments.forEach(seg => {
-    if (!seg.val) return;
-    const sliceAngle = (seg.val / total) * Math.PI * 2;
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, startAngle, startAngle + sliceAngle);
-    ctx.strokeStyle = seg.color;
-    ctx.lineWidth = lineWidth;
-    ctx.lineCap = 'butt';
-    ctx.stroke();
-    startAngle += sliceAngle;
-  });
-}
-
-function buildCharts() {
-  if (!S.media.data.length && !S.prod.data.length) return;
-
-  // ── Media chart ──
-  const mTotal   = S.media.data.length;
-  const mBilled  = S.media.data.filter(r => isBilled(r['Status'])).length;
-  const mPending = mTotal - mBilled;
-  const mChqY    = S.media.data.filter(r => isChequeDone(r['Cheque Status'])).length;
-  const mChqN    = mTotal - mChqY;
-
-  const mSegs = [
-    { val: mBilled,  color: CHART_COLORS.billed,  label: 'วางบิลแล้ว' },
-    { val: mPending, color: CHART_COLORS.pending,  label: 'ยังไม่วางบิล' },
-    { val: mChqY,    color: CHART_COLORS.chqY,     label: 'รับเช็คแล้ว' },
-    { val: mChqN,    color: CHART_COLORS.chqN,     label: 'ยังไม่รับเช็ค' },
-  ];
-
-  drawDonut('chart-media', mSegs, 90, 90, 70, 18);
-  document.getElementById('chart-media-total').textContent = mTotal.toLocaleString();
-  document.getElementById('chart-media-legend').innerHTML = mSegs.map(s=>`
-    <div class="legend-item">
-      <div class="legend-dot" style="background:${s.color}"></div>
-      <span class="legend-name">${s.label}</span>
-      <span class="legend-val">${s.val.toLocaleString()}</span>
-      <span class="legend-pct">${mTotal?((s.val/mTotal)*100).toFixed(1):0}%</span>
-    </div>`).join('');
-
-  // ── Production chart ──
-  const pTotal   = S.prod.data.length;
-  const pBilled  = S.prod.data.filter(r => isBilled(r['Status Invoice'])).length;
-  const pPending = pTotal - pBilled;
-  const pChqY    = S.prod.data.filter(r => isChequeDone(r['Cheque Status'])).length;
-  const pChqN    = pTotal - pChqY;
-
-  const pSegs = [
-    { val: pBilled,  color: CHART_COLORS.billed,  label: 'วางบิลแล้ว' },
-    { val: pPending, color: CHART_COLORS.pending,  label: 'ยังไม่วางบิล' },
-    { val: pChqY,    color: CHART_COLORS.chqY,     label: 'รับเช็คแล้ว' },
-    { val: pChqN,    color: CHART_COLORS.chqN,     label: 'ยังไม่รับเช็ค' },
-  ];
-
-  drawDonut('chart-prod', pSegs, 90, 90, 70, 18);
-  document.getElementById('chart-prod-total').textContent = pTotal.toLocaleString();
-  document.getElementById('chart-prod-legend').innerHTML = pSegs.map(s=>`
-    <div class="legend-item">
-      <div class="legend-dot" style="background:${s.color}"></div>
-      <span class="legend-name">${s.label}</span>
-      <span class="legend-val">${s.val.toLocaleString()}</span>
-      <span class="legend-pct">${pTotal?((s.val/pTotal)*100).toFixed(1):0}%</span>
-    </div>`).join('');
-
-  // เก็บไว้สำหรับ popup
-  window._chartData = { mSegs, pSegs, mTotal, pTotal, mBilled, mPending, mChqY, mChqN, pBilled, pPending, pChqY, pChqN };
-}
-
-function showYearChartPopup(type) {
-  const isMedia = type === 'media';
-  const d = window._chartData;
-  if (!d) return;
-
-  const segs    = isMedia ? d.mSegs    : d.pSegs;
-  const total   = isMedia ? d.mTotal   : d.pTotal;
-  const billed  = isMedia ? d.mBilled  : d.pBilled;
-  const pending = isMedia ? d.mPending : d.pPending;
-  const chqY    = isMedia ? d.mChqY    : d.pChqY;
-  const chqN    = isMedia ? d.mChqN    : d.pChqN;
-  const name    = isMedia ? 'Media' : 'Production (PM)';
-
-  document.getElementById('ycp-title').textContent = `${isMedia?'📋':'🎬'} ${name} — สัดส่วนสถานะ PO`;
-  document.getElementById('ycp-sub').textContent   = `PO ทั้งหมด ${total.toLocaleString()} รายการ`;
-
-  // คำนวณ year data
-  const data   = isMedia ? S.media.data : S.prod.data;
-  const statKey = isMedia ? 'Status' : 'Status Invoice';
-  const ymap = {};
-  data.forEach(r => {
-    const yr = (r['PO_YEAR'] || '').replace('PO','') || '?';
-    if (!ymap[yr]) ymap[yr] = {yr, b:0, ba:0, p:0, pa:0};
-    const amt = cleanNum(r['Amount']) || 0;
-    if (isBilled(r[statKey])) { ymap[yr].b++; ymap[yr].ba += amt; }
-    else                       { ymap[yr].p++; ymap[yr].pa += amt; }
-  });
-  const yearRows = Object.values(ymap).sort((a,b)=>a.yr.localeCompare(b.yr));
-  const totRow   = yearRows.reduce((s,r)=>({yr:'รวม',b:s.b+r.b,ba:s.ba+r.ba,p:s.p+r.p,pa:s.pa+r.pa}),{yr:'',b:0,ba:0,p:0,pa:0});
-
-  document.getElementById('ycp-body').innerHTML = `
-    <div class="ycp-charts-row">
-      <div class="ycp-canvas-wrap">
-        <canvas id="ycp-canvas-${type}" width="180" height="180"></canvas>
-        <div class="ycp-center">
-          <div style="font-size:1.4rem;font-weight:800;color:var(--ink)">${total.toLocaleString()}</div>
-          <div style="font-size:.66rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-top:2px">PO ทั้งหมด</div>
-        </div>
-      </div>
-      <div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          ${segs.map(s=>`
-          <div style="display:flex;align-items:center;gap:10px">
-            <div style="width:12px;height:12px;border-radius:50%;background:${s.color};flex-shrink:0"></div>
-            <div style="flex:1;font-size:.82rem;color:var(--muted)">${s.label}</div>
-            <div style="font-weight:700;color:var(--ink)">${s.val.toLocaleString()}</div>
-            <div style="font-size:.75rem;color:var(--muted-light);min-width:44px;text-align:right">
-              ${total?((s.val/total)*100).toFixed(1):0}%
-            </div>
-          </div>
-          <div style="height:6px;background:var(--surface);border-radius:20px;overflow:hidden">
-            <div style="height:100%;width:${total?((s.val/total)*100):0}%;background:${s.color};border-radius:20px;transition:width .5s ease"></div>
-          </div>`).join('')}
-        </div>
-      </div>
-    </div>
-
-    <div style="font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border)">
-      📊 แบ่งตามปี
-    </div>
-    <div style="overflow-x:auto;border-radius:8px;border:1px solid var(--border)">
-      <table class="ycp-year-table">
-        <thead><tr>
-          <th>ปี</th>
-          <th>วางบิลแล้ว (PO)</th>
-          <th>ยอด Amount (฿)</th>
-          <th>ยังไม่วางบิล (PO)</th>
-          <th>ยอด Amount (฿)</th>
-        </tr></thead>
-        <tbody>
-          ${yearRows.map(r=>`<tr>
-            <td>${r.yr}</td>
-            <td class="yg2">${r.b.toLocaleString()}</td>
-            <td class="yg2">${fmtK(r.ba)}</td>
-            <td class="ya2">${r.p>0?r.p.toLocaleString():'—'}</td>
-            <td class="ya2">${r.pa>0?fmtK(r.pa):'—'}</td>
-          </tr>`).join('')}
-          <tr>
-            <td>รวม</td>
-            <td class="yg2">${totRow.b.toLocaleString()}</td>
-            <td class="yg2">${fmtK(totRow.ba)}</td>
-            <td class="ya2">${totRow.p.toLocaleString()}</td>
-            <td class="ya2">${fmtK(totRow.pa)}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  `;
-
-  document.getElementById('ychart-ov').classList.add('open');
-  document.body.style.overflow = 'hidden';
-
-  // วาด chart ใน popup
-  setTimeout(() => drawDonut(`ycp-canvas-${type}`, segs, 90, 90, 70, 18), 50);
-}
-
-
-function showYearRowPopup(r) {
-  // ใช้ popup ของ chart โดย mock data
-  document.getElementById('ycp-title').textContent = `📅 ข้อมูลปี ${r.yr}`;
-  document.getElementById('ycp-sub').textContent   = `Media ${r.mb.toLocaleString()} PO · Production ${r.pb.toLocaleString()} PO`;
-  document.getElementById('ycp-body').innerHTML = `
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
-      <div style="background:var(--surface);border-radius:12px;padding:16px;border:1px solid var(--border)">
-        <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--border)">📋 Media</div>
-        <div style="display:flex;flex-direction:column;gap:9px">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:.8rem;color:var(--muted)">วางบิลแล้ว</span>
-            <span style="font-weight:700;color:var(--green)">${r.mb.toLocaleString()} PO</span>
-          </div>
-          <div style="height:5px;background:var(--g100);border-radius:20px;overflow:hidden">
-            <div style="height:100%;width:${(r.mb+r.mp)?((r.mb/(r.mb+r.mp))*100):0}%;background:var(--green);border-radius:20px"></div>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:.8rem;color:var(--muted)">ยอด Amount</span>
-            <span style="font-weight:700;color:var(--green)">฿${fmtK(r.mba)}</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px;padding-top:8px;border-top:1px solid var(--border)">
-            <span style="font-size:.8rem;color:var(--muted)">ยังไม่วางบิล</span>
-            <span style="font-weight:700;color:var(--amber)">${r.mp>0?r.mp.toLocaleString():'—'} PO</span>
-          </div>
-          ${r.mp>0?`<div style="height:5px;background:var(--g100);border-radius:20px;overflow:hidden">
-            <div style="height:100%;width:${(r.mb+r.mp)?((r.mp/(r.mb+r.mp))*100):0}%;background:var(--amber);border-radius:20px"></div>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:.8rem;color:var(--muted)">ยอด Amount</span>
-            <span style="font-weight:700;color:var(--amber)">฿${fmtK(r.mpa)}</span>
-          </div>`:''}
-        </div>
-      </div>
-      <div style="background:var(--surface);border-radius:12px;padding:16px;border:1px solid var(--border)">
-        <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--border)">🎬 Production (PM)</div>
-        <div style="display:flex;flex-direction:column;gap:9px">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:.8rem;color:var(--muted)">วางบิลแล้ว</span>
-            <span style="font-weight:700;color:var(--green)">${r.pb.toLocaleString()} PO</span>
-          </div>
-          <div style="height:5px;background:var(--g100);border-radius:20:overflow:hidden">
-            <div style="height:100%;width:${(r.pb+r.pp)?((r.pb/(r.pb+r.pp))*100):0}%;background:var(--green);border-radius:20px"></div>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:.8rem;color:var(--muted)">ยอด Amount</span>
-            <span style="font-weight:700;color:var(--green)">฿${fmtK(r.pba)}</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px;padding-top:8px;border-top:1px solid var(--border)">
-            <span style="font-size:.8rem;color:var(--muted)">ยังไม่วางบิล</span>
-            <span style="font-weight:700;color:var(--amber)">${r.pp>0?r.pp.toLocaleString():'—'} PO</span>
-          </div>
-          ${r.pp>0?`<div style="height:5px;background:var(--g100);border-radius:20px;overflow:hidden">
-            <div style="height:100%;width:${(r.pb+r.pp)?((r.pp/(r.pb+r.pp))*100):0}%;background:var(--amber);border-radius:20px"></div>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:.8rem;color:var(--muted)">ยอด Amount</span>
-            <span style="font-weight:700;color:var(--amber)">฿${fmtK(r.ppa)}</span>
-          </div>`:''}
-        </div>
-      </div>
-    </div>
-    <div style="background:var(--ink-2);border-radius:10px;padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
-      <div style="text-align:center">
-        <div style="font-size:.68rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Media PO รวม</div>
-        <div style="font-size:1.2rem;font-weight:800;color:white">${(r.mb+r.mp).toLocaleString()}</div>
-        <div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:2px">฿${fmtK(r.mba+r.mpa)}</div>
-      </div>
-      <div style="text-align:center;border-left:1px solid rgba(255,255,255,.1)">
-        <div style="font-size:.68rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Production PO รวม</div>
-        <div style="font-size:1.2rem;font-weight:800;color:white">${(r.pb+r.pp).toLocaleString()}</div>
-        <div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:2px">฿${fmtK(r.pba+r.ppa)}</div>
-      </div>
-    </div>
-  `;
-  document.getElementById('ychart-ov').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeYChartPopup(e) {
-  if(e.target.id === 'ychart-ov') {
-    document.getElementById('ychart-ov').classList.remove('open');
     document.body.style.overflow = '';
   }
 }
