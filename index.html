@@ -2863,7 +2863,7 @@ function renderTable(t){
       return `<tr onclick="showModal('${t}',${idx})">
         <td style="color:var(--muted-light);font-size:.77rem">${idx+1}</td>
         <td><span class="bdg ${bl?'bdg-g':'bdg-a'}">${bl?'✅ วางบิลแล้ว':'⏳ ยังไม่วางบิล'}</span></td>
-        <td title="${r['Memo']||''}">${tc(r['Memo'],18)}</td>
+        <td title="${r[Object.keys(r)[0]]||''}">${tc((r[Object.keys(r)[0]]||''),18)}</td>
         <td style="font-family:monospace;font-size:.77rem;color:var(--muted)">${r['PR. No.']||'—'}</td>
         <td style="font-family:monospace;font-size:.77rem;color:var(--blue)">${r['PO Number']||'—'}</td>
         <td style="font-size:.77rem;color:var(--muted)">${r['Job No.']||'—'}</td>
@@ -2887,7 +2887,7 @@ function renderTable(t){
       const amt=cleanNum(r['Amount']);
       return `<tr onclick="showModal('${t}',${idx})">
         <td style="color:var(--muted-light);font-size:.77rem">${idx+1}</td>
-        <td title="${r['Memo']||''}">${tc(r['Memo'],18)}</td>
+        <td title="${r[Object.keys(r)[0]]||''}">${tc((r[Object.keys(r)[0]]||''),18)}</td>
         <td style="font-family:monospace;font-size:.77rem;color:var(--muted)">${r['PR. No.']||'—'}</td>
         <td style="font-family:monospace;font-size:.77rem;color:var(--blue)">${r['PO Number']||'—'}</td>
         <td style="font-size:.77rem;color:var(--muted)">${r['Job No.']||'—'}</td>
@@ -3351,7 +3351,7 @@ function showModal(t,idx){
         <div class="di"><div class="dk">PR. No.</div><div class="dv mono">${r['PR. No.']||'—'}</div></div>
         <div class="di"><div class="dk">Job No.</div><div class="dv mono">${r['Job No.']||'—'}</div></div>
         <div class="di"><div class="dk">Brand</div><div class="dv">${r['Brand']||'—'}</div></div>
-        <div class="di full"><div class="dk">Memo</div><div class="dv">${r['Memo']||'<span class="empty">ไม่ระบุ</span>'}</div></div>
+        <div class="di full"><div class="dk">Memo</div><div class="dv">${(r[Object.keys(r)[0]]||'')||'<span class="empty">ไม่ระบุ</span>'}</div></div>
         <div class="di full"><div class="dk">Job / Campaign</div><div class="dv">${r['Job / Campaign']||'<span class="empty">ไม่ระบุ</span>'}</div></div>
         <div class="di full"><div class="dk">Description</div><div class="dv">${r['Description']||'<span class="empty">ไม่ระบุ</span>'}</div></div>
         <div class="di full"><div class="dk">Supplier</div><div class="dv">${r['Supplier']||'<span class="empty">ไม่ระบุ</span>'}</div></div>
