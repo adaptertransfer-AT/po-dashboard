@@ -1360,6 +1360,170 @@ tbody td { padding:9px 13px; max-width:200px; overflow:hidden; text-overflow:ell
   text-align: center;
   padding: 16px;
 }
+
+/* ── Documents Tab ── */
+.docs-wrap { padding: 28px 32px; max-width: 1300px; margin: 0 auto; }
+
+.docs-howto {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--blue-bg);
+  border-radius: var(--radius);
+  padding: 12px 18px;
+  font-size: .83rem;
+  color: var(--blue);
+  margin: 20px 0 16px;
+  flex-wrap: wrap;
+}
+.docs-howto-icon { font-size: 1rem; flex-shrink: 0; }
+.docs-sheet-link {
+  margin-left: auto;
+  background: var(--blue);
+  color: #fff;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: .78rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.docs-sheet-link:hover { opacity: .85; }
+
+.docs-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.docs-cat-btn {
+  padding: 5px 16px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Sarabun', sans-serif;
+  transition: all .15s;
+}
+.docs-cat-btn:hover { border-color: var(--brand); color: var(--brand); }
+.docs-cat-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); }
+
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.doc-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: box-shadow .2s, transform .15s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.doc-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+.doc-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.doc-type-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.doc-type-pdf   { background: #fde8eb; }
+.doc-type-ppt   { background: #fff3e0; }
+.doc-type-sheet { background: var(--green-bg); }
+.doc-type-img   { background: var(--blue-bg); }
+.doc-type-other { background: var(--surface); }
+
+.doc-name {
+  font-size: .88rem;
+  font-weight: 800;
+  color: var(--ink-2);
+  line-height: 1.3;
+}
+.doc-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.doc-cat {
+  background: var(--surface);
+  color: var(--muted);
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: .7rem;
+  font-weight: 600;
+}
+.doc-date {
+  font-size: .72rem;
+  color: var(--muted-light);
+  margin-left: auto;
+}
+.doc-note {
+  font-size: .75rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.doc-open-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--brand-dim);
+  color: var(--brand);
+  border-radius: 8px;
+  padding: 6px;
+  font-size: .75rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* PDF Viewer */
+.docs-viewer-wrap {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  margin-top: 8px;
+}
+.docs-viewer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: var(--ink-3);
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 700;
+}
+.docs-viewer-frame {
+  width: 100%;
+  height: 600px;
+  border: none;
+}
 </style>
 </head>
 <body>
@@ -1732,19 +1896,46 @@ tbody td { padding:9px 13px; max-width:200px; overflow:hidden; text-overflow:ell
 
     <!-- ── BILLING PLACEHOLDER ── -->
     <div class="view" id="view-billing">
-      <div class="placeholder-wrap">
-        <div class="placeholder-card">
-          <span class="placeholder-icon">🧾</span>
-          <h2 class="placeholder-title">ตารางวางบิล-รับเช็ค</h2>
-          <p class="placeholder-desc">หน้านี้กำลังอยู่ระหว่างการพัฒนาค่ะ<br>เร็วๆ นี้จะสามารถดูตารางวางบิล รับเช็ค และลิงก์เอกสารต่างๆ ได้ที่นี่</p>
-          <div class="placeholder-features">
-            <div class="pf-item"><div class="pf-icon">📊</div><div class="pf-text">แสดงตารางวางบิลรายเดือน</div></div>
-            <div class="pf-item"><div class="pf-icon">💳</div><div class="pf-text">ติดตามสถานะการรับเช็ค</div></div>
-            <div class="pf-item"><div class="pf-icon">🔗</div><div class="pf-text">ลิงก์เชื่อมต่อ Google Sheets</div></div>
-            <div class="pf-item"><div class="pf-icon">📎</div><div class="pf-text">แนบและจัดการไฟล์เอกสาร</div></div>
+      <div class="docs-wrap">
+
+        <!-- Hero -->
+        <div class="perf-hero">
+          <div class="perf-hero-left">
+            <div class="perf-hero-icon">🗂️</div>
+            <div>
+              <div class="perf-hero-title">เอกสารและไฟล์แนบ</div>
+              <div class="perf-hero-sub">คลิกที่ card เพื่อเปิดไฟล์ได้เลยค่ะ — อัปเดตอัตโนมัติจาก Google Sheets</div>
+            </div>
           </div>
-          <div class="placeholder-badge">⏳ กำลังพัฒนา — Coming Soon</div>
+          <div class="perf-hero-badge" id="docs-updated">— กำลังโหลด</div>
         </div>
+
+        <!-- วิธีเพิ่มไฟล์ -->
+        <div class="docs-howto">
+          <span class="docs-howto-icon">💡</span>
+          <span>เพิ่มไฟล์ใหม่ได้เลยใน <strong>Google Sheet → Tab Documents</strong> ค่ะ — Dashboard จะอัปเดตอัตโนมัติค่ะ</span>
+          <a href="https://docs.google.com/spreadsheets/d/17_enlARrCcCUj7HmjKuxf0IKy-YQnAvuf474CQ229Sg/edit#gid=956759109" target="_blank" class="docs-sheet-link">📝 เปิด Sheet</a>
+        </div>
+
+        <!-- Filter หมวดหมู่ -->
+        <div class="docs-filter" id="docs-filter">
+          <button class="docs-cat-btn active" onclick="filterDocs('')">ทั้งหมด</button>
+        </div>
+
+        <!-- Cards -->
+        <div class="docs-grid" id="docs-grid">
+          <div class="perf-card-loading">กำลังโหลดเอกสาร...</div>
+        </div>
+
+        <!-- PDF Viewer -->
+        <div class="docs-viewer-wrap" id="docs-viewer-wrap" style="display:none">
+          <div class="docs-viewer-header">
+            <span id="docs-viewer-title">—</span>
+            <button class="perf-info-close" onclick="document.getElementById('docs-viewer-wrap').style.display='none'">✕</button>
+          </div>
+          <iframe id="docs-viewer-iframe" src="" class="docs-viewer-frame"></iframe>
+        </div>
+
       </div>
     </div>
 
@@ -1994,11 +2185,12 @@ const PROXIES = [
 ];
 
 const GID = {
-  'Media':         '570373312',   // หลัก — ยึดเป็น source of truth
-  'Production':    '53967775',   // หลัก — ยึดเป็น source of truth
-  '📊 Dashboard':  '827819259',  // เสริม
-  'Check-Media':   '1263933076', // เสริม
-  'Check-PM':      '1704537283', // เสริม
+  'Media':         '570373312',
+  'Production':    '53967775',
+  '📊 Dashboard':  '827819259',
+  'Check-Media':   '1263933076',
+  'Check-PM':      '1704537283',
+  'Documents':     '956759109',  // ไฟล์เอกสารแนบ
 };
 
 function sheetUrl(name) {
@@ -2940,7 +3132,7 @@ const VCF={
   prod:{title:'Production PO Tracking',icon:'🎬'},
   checkmedia:{title:'Check-Media',icon:'✅'},
   checkpm:{title:'Check-PM',icon:'✅'},
-  billing:{title:'ตารางวางบิล-รับเช็ค',icon:'🧾'},
+  billing:{title:'เอกสารและไฟล์แนบ',icon:'🗂️'},
   calendar:{title:'ปฏิทินวันหยุดประจำปี',icon:'📅'},
   memo:{title:'เอกสาร Memo อนุมัติ',icon:'📝'},
   performance:{title:'Performance Overview',icon:'📊'},
@@ -2959,8 +3151,9 @@ function showView(v){
   content.style.animation='none';
   content.offsetHeight;
   content.style.animation='fadeUp .25s ease';
-  // Build Performance on demand
+  // Build on demand
   if (v === 'performance') buildPerformance();
+  if (v === 'billing') loadDocuments();
 }
 
 
@@ -3324,6 +3517,107 @@ function _unused_showTop3Popup(title, bodyHtml) {
   document.getElementById('top3-modal-title').textContent = title;
   document.getElementById('top3-modal-body').innerHTML = bodyHtml;
   ov.style.display = 'flex';
+}
+
+// ============================================================
+// DOCUMENTS TAB
+// ============================================================
+let _docsData = [];
+
+function loadDocuments() {
+  const grid = document.getElementById('docs-grid');
+  grid.innerHTML = '<div class="perf-card-loading">กำลังโหลดเอกสาร...</div>';
+
+  fetchSheet('Documents').then(csv => {
+    const rows = parseCSV(csv);
+    _docsData = rows.filter(r => r['ชื่อเอกสาร'] && r['ชื่อเอกสาร'].trim() && r['Link'] && r['Link'].trim());
+
+    if (!_docsData.length) {
+      grid.innerHTML = '<div class="perf-card-loading">ยังไม่มีเอกสาร — เพิ่มได้ใน Sheet Documents ค่ะ</div>';
+      document.getElementById('docs-updated').textContent = 'ยังไม่มีข้อมูลค่ะ';
+      return;
+    }
+
+    // สร้าง category filter buttons
+    const cats = ['ทั้งหมด', ...new Set(_docsData.map(r => (r['หมวดหมู่']||'อื่นๆ').trim()).filter(Boolean))];
+    const filterEl = document.getElementById('docs-filter');
+    filterEl.innerHTML = cats.map((c,i) =>
+      `<button class="docs-cat-btn ${i===0?'active':''}" onclick="filterDocs('${c==='ทั้งหมด'?'':c}')">${c}</button>`
+    ).join('');
+
+    renderDocCards(_docsData);
+    document.getElementById('docs-updated').textContent = 'อัปเดต: ' + new Date().toLocaleTimeString('th-TH');
+
+  }).catch(() => {
+    grid.innerHTML = '<div class="perf-card-loading">⚠️ โหลดไม่สำเร็จ — ตรวจสอบ Sheet Documents ค่ะ</div>';
+  });
+}
+
+function filterDocs(cat) {
+  document.querySelectorAll('.docs-cat-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent === (cat || 'ทั้งหมด'));
+  });
+  const filtered = cat ? _docsData.filter(r => (r['หมวดหมู่']||'อื่นๆ').trim() === cat) : _docsData;
+  renderDocCards(filtered);
+}
+
+function renderDocCards(rows) {
+  const grid = document.getElementById('docs-grid');
+  if (!rows.length) {
+    grid.innerHTML = '<div class="perf-card-loading">ไม่พบเอกสารในหมวดนี้ค่ะ</div>';
+    return;
+  }
+
+  grid.innerHTML = rows.map(r => {
+    const name  = r['ชื่อเอกสาร'] || '—';
+    const type  = (r['ประเภท'] || '').toUpperCase().trim();
+    const cat   = r['หมวดหมู่'] || 'อื่นๆ';
+    const date  = r['วันที่'] || '';
+    const link  = r['Link'] || '';
+    const note  = r['หมายเหตุ'] || '';
+
+    // icon และ class ตามประเภทไฟล์
+    let icon = '📄', typeCls = 'doc-type-other';
+    if (type === 'PDF')  { icon = '📕'; typeCls = 'doc-type-pdf'; }
+    else if (type === 'PPT' || type === 'PPTX') { icon = '📊'; typeCls = 'doc-type-ppt'; }
+    else if (type === 'SHEET' || type === 'GOOGLE SHEET') { icon = '📗'; typeCls = 'doc-type-sheet'; }
+    else if (type === 'JPG' || type === 'PNG' || type === 'IMG') { icon = '🖼️'; typeCls = 'doc-type-img'; }
+
+    // แปลง Google Drive link เป็น embed link
+    const embedLink = link.replace('/view', '/preview').replace('/edit', '/preview');
+    const canEmbed  = link.includes('drive.google.com') || link.includes('docs.google.com');
+
+    return `<div class="doc-card" onclick="openDoc('${encodeURIComponent(name)}','${encodeURIComponent(embedLink)}','${encodeURIComponent(link)}',${canEmbed})">
+      <div class="doc-card-top">
+        <div class="doc-type-icon ${typeCls}">${icon}</div>
+        <div class="doc-name">${name}</div>
+      </div>
+      <div class="doc-meta">
+        <span class="doc-cat">${cat}</span>
+        <span class="doc-date">${date}</span>
+      </div>
+      ${note ? `<div class="doc-note">📎 ${note}</div>` : ''}
+      <div class="doc-open-btn">🔗 คลิกเพื่อเปิด</div>
+    </div>`;
+  }).join('');
+}
+
+function openDoc(nameEnc, embedEnc, linkEnc, canEmbed) {
+  const name  = decodeURIComponent(nameEnc);
+  const embed = decodeURIComponent(embedEnc);
+  const link  = decodeURIComponent(linkEnc);
+
+  if (canEmbed) {
+    // แสดง PDF/Sheet ใน iframe
+    document.getElementById('docs-viewer-title').textContent = name;
+    document.getElementById('docs-viewer-iframe').src = embed;
+    const viewer = document.getElementById('docs-viewer-wrap');
+    viewer.style.display = 'block';
+    viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    // เปิด tab ใหม่สำหรับไฟล์ประเภทอื่น
+    window.open(link, '_blank');
+  }
 }
 
 // ============================================================
